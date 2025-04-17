@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Link to head.html for shared resources -->
+    <script>
+        fetch('head.html')
+            .then(response => response.text())
+            .then(data => {
+                document.write(data);
+            })
+            .catch(error => console.error('Error loading head.html:', error));
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <style>
+        body {
+            font-family: 'Roboto', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #82c7c3;
+            color: #333;
+        }
+        header {
+            text-align: center;
+            padding: 50px 20px;
+            background: url('hero-bg.jpg') no-repeat center center/cover;
+            color: #0ccc55;
+        }
+        header h1 {
+            font-size: 3rem;
+            margin: 0;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+        nav {
+            background: #222;
+            color: #2ba5ec;
+            padding: 10px 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        }
+        nav ul {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+        nav ul li {
+            margin: 0 15px;
+        }
+        nav ul li a {
+            color: #7fc213;
+            text-decoration: none;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+        nav ul li a:hover {
+            color: #f4a261;
+        }
+        .container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 20px;
+            padding: 40px 20px;
+        }
+        .card {
+            background: #fff;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(216, 105, 142, 0.1);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+        }
+        .card h2 {
+            margin-top: 0;
+            color: #444;
+            font-size: 1.5rem;
+        }
+        .card p {
+            color: #666;
+            line-height: 1.6;
+        }
+        .card:nth-child(1) {
+            background-color: #e0e6ec; /* Light blue for Case Study */
+        }
+        .card:nth-child(2) {
+            background-color: #f5f5dc; /* Beige for Our Team */
+        }
+        .card:nth-child(3) {
+            background-color: #e6e6fa; /* Lavender for Our History */
+        }
+        .slider {
+            position: relative;
+            width: 100%;
+            max-width: 400px;
+            margin: 20px auto;
+            overflow: hidden;
+        }
+        .slider img {
+            width: 100%;
+            display: none;
+            transition: opacity 0.5s ease;
+        }
+        .slider img.active {
+            display: block;
+            opacity: 1;
+        }
+        .slider-controls {
+            position: absolute;
+            top: 50%;
+            width: 100%;
+            display: flex;
+            justify-content: space-between;
+            transform: translateY(-50%);
+        }
+        .slider-controls button {
+            background: rgba(0, 0, 0, 0.5);
+            color: #599ab4;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+            transition: background 0.3s ease;
+        }
+        .slider-controls button:hover {
+            background: rgba(20, 9, 184, 0.8);
+        }
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: #222;
+            color: #06af3e;
+            margin-top: 40px;
+        }
+        footer p {
+            margin: 0;
+            font-size: 0.9rem;
+        }
+        p {
+            text-align: center;
+        }
+    </style>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const images = document.querySelectorAll('.slider img');
+            let currentIndex = 0;
+
+            function showImage(index) {
+                images.forEach((img, i) => {
+                    img.classList.toggle('active', i === index);
+                });
+            }
+
+            document.getElementById('prev').addEventListener('click', () => {
+                currentIndex = (currentIndex - 1 + images.length) % images.length;
+                showImage(currentIndex);
+            });
+
+            document.getElementById('next').addEventListener('click', () => {
+                currentIndex = (currentIndex + 1) % images.length;
+                showImage(currentIndex);
+            });
+
+            showImage(currentIndex);
+        });
+    </script>
+</head>
+<body>
+    <nav>
+        <ul>
+            <li><a href="head.html">Home</a></li>
+            <!-- Removed About Us menu item -->
+            <li><a href="services.html">Services</a></li>
+            <li><a href="contact us.html">Contact</a></li>
+        </ul>
+    </nav>
+    <header>
+        <h1>About Us</h1>
+    </header>
+    <p>
+        At Tuungane Investment Company LTD,<br> our mission is to provide accessible and reliable loan solutions. 
+        With a team of experienced professionals, <br>we prioritize transparency, integrity, and customer satisfaction. 
+    </p>
+    <p>
+        Our goal is to empower individuals and businesses to achieve their financial goals. <br>
+        We are committed to delivering innovative and impactful financial services tailored to your needs.
+    </p>
+    <div class="container">
+        <!-- Case Study Section -->
+        <div class="card">
+            <h2>Case Study</h2>
+            <p>Explore our impactful projects and how we have helped transform communities through innovative solutions.</p>
+        </div>
+        <!-- Team Section -->
+        <div class="card">
+            <h2>Our Team</h2>
+            <p>Meet our dedicated team of professionals who bring passion and expertise to every project.</p>
+            <div class="slider">
+                <img src="ty/ceo.jpg" alt="Team Member 1" class="active">
+                <p>CEO - MR KARIHUNGU</p>
+                <img src="ty/mp.jpg" alt="Team Member 2">
+                <p>GENERAL MANAGER - KARIHUNGU OLIVIER</p>
+                <img src="ty/mkt .jpg" alt="Team Member 3">
+                <p>MARKETING MANAGER - ALEX KARIHUNGU <br> with other staff members</p>
+                <a href="galley.html" style="display: inline-block; margin-top: 10px; padding: 10px 20px; background-color: #599ab4; color: white; text-decoration: none; border-radius: 5px; transition: background 0.3s ease;">More Details</a>
+                <div class="slider-controls">
+                    <button id="prev">&lt;</button>
+                    <button id="next">&gt;</button>
+                </div>
+            </div>
+        </div>
+        <!-- History Section -->
+        <div class="card">
+            <h2>Our History</h2>
+            <p>Learn about our journey, milestones, and the values that have shaped our organization over the years.<br> Our journey started earlier 1998.</p>
+        </div>
+    </div>
+    <footer>
+        <p>&copy; 2023 Tuungane Investment Company LTD. All rights reserved.</p>
+        <p>Email: <a href="mailto:Tuungane.co@gmail.com">Tuungane.co@gmail.com</a></p>
+    </footer>
+</body>
+</html>

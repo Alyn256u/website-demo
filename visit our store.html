@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visit Our Store</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f0f8ff; /* Softer background color */
+        }
+        header {
+            background-color: #333;
+            color: white;
+            padding: 1.5rem;
+            text-align: center;
+            font-size: 1.5rem;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .grid-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1.5rem;
+            padding: 2rem;
+        }
+        .card {
+            background: #fff;
+            border: 3px solid #5dc2b9;
+            border-radius: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 1rem;
+            text-align: center;
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+        }
+        .card img {
+            max-width: 100%;
+            border-radius: 12px 12px 0 0;
+            margin-bottom: 1rem;
+        }
+        .card h3 {
+            margin: 1rem 0 0.5rem;
+            color: #333;
+        }
+        .card p {
+            color: #666;
+        }
+        .card button {
+            background-color: #5dc2b9;
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 1rem;
+            transition: background-color 0.3s;
+        }
+        .card button:hover {
+            background-color: #4aa8a0;
+        }
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+            font-size: 0.9rem;
+        }
+        footer a {
+            color: #5dc2b9;
+            text-decoration: none;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Welcome to Our Store</h1>
+    </header>
+    <div class="grid-container">
+        <div class="card">
+            <img src="ty/bj2.jpg" alt="Product 1 Image 1">
+            <img src="ty/tn.jpg" alt="Product 1 Image 2">
+            <img src="ty/bj.jpg" alt="Product 1 Image 3">
+            <h3>Product 1</h3>
+            <p>High-quality product for your needs.</p>
+            <a href="payment.html"><button>Buy Now</button></a>
+        </div>
+        <div class="card">
+            <img src="ty/bm.jpg" alt="Product 2 Image 1">
+            <img src="ty/board.jpg" alt="Product 2 Image 2">
+            <img src="ty/pp.jpg" alt="Product 2 Image 3">
+            <h3>Product 2</h3>
+            <p>Durable and reliable for everyday use.</p>
+            <a href="payment.html"><button>Buy Now</button></a>
+        </div>
+        <div class="card">
+            <img src="ty/cu.jpg" alt="Product 3 Image 1">
+            <a href="https://www.beforward.jp/#:~:text=Today%27s%20Deals,Search%20by%20Discount" target="_blank">See More</a><br>
+            
+            <p>Explore more options for your lifestyle.</p>
+            <a href="payment.html"><button>Buy Now</button></a>
+        </div>
+        <!-- Add more cards as needed -->
+    </div>
+    <footer>
+        <p>&copy; 2023 Our Store. All rights reserved. | <a href="contact.html">Contact Us</a> | Email: <a href="mailto:Tuungane.co@gmail.com">Tuungane.co@gmail.com</a></p>
+    </footer>
+</body>
+</html>

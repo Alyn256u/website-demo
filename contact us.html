@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Chat With Us</title>
+    <style>
+        
+        h1 {
+            text-align: center;
+        }
+
+        /* Add border color around the form */
+        form {
+            border: 4px solid #2209af; /* Green border */
+        }
+
+        /* Menu bar styling */
+        nav {
+            background-color: #56565e;
+            color: white;
+            padding: 10px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            position: fixed;
+            top: 0;
+            width: 100%;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        nav a:hover {
+            text-decoration: underline;
+        }
+
+        body {
+            margin-top: 60px; /* Adjust for fixed menu bar */
+        }
+    </style>
+    <script>
+        function validateForm(event) {
+            event.preventDefault();
+            const name = document.getElementById('name').value.trim();
+            const email = document.getElementById('email').value.trim();
+            const subject = document.getElementById('subject').value.trim();
+            const message = document.getElementById('message').value.trim();
+            const error = document.getElementById('error');
+            const output = document.getElementById('output');
+
+            if (!name || !email || !subject || !message) {
+                error.textContent = "All fields are required.";
+                return;
+            }
+
+            if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+                error.textContent = "Please enter a valid email address.";
+                return;
+            }
+
+            error.textContent = "";
+            output.innerHTML = `
+                <h3>Submitted Data:</h3>
+                <p><strong>Name:</strong> ${name}</p>
+                <p><strong>Email:</strong> ${email}</p>
+                <p><strong>Subject:</strong> ${subject}</p>
+                <p><strong>Message:</strong> ${message}</p>
+            `;
+        }
+    </script>
+</head>
+<body style="background-color: #67849e;"> <!-- Added background color -->
+    <!-- Menu Bar -->
+    <nav>
+        <div>     </div>
+        <div>
+            <a href="#contact">Contact Us</a>
+            <a href="#location">Our Location</a>
+            <a href="#call">Call Us</a>
+        </div>
+    </nav>
+
+    <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+        <div style="display: flex; width: 50%; max-width: 600px; background-color: #addd91; border-radius: 5px;">
+            <!-Left Side -->
+            <div style="background-color: #3b46e4; width: 30%; padding: 20px; border-top-left-radius: 5px; border-bottom-left-radius: 5px;">
+                <h3 style="color: rgb(199, 106, 106);">Get in Touch</h3>
+                <p style="color: rgb(63, 207, 207);">We'd love to hear from you!</p>
+                <img src="ty/log.jpg" alt="Logo" style="display: block; margin: 10px auto; max-width: 80px; border-radius: 5px;">
+            </div>
+            <!-- Form Section -->
+            <form onsubmit="validateForm(event)" style="padding: 40px; width: 70%;">
+                <h1 style="color: red; text-align: center;">Chat With Us</h1>
+                <label for="name">Name:</label><br>
+                <input type="text" id="name" name="name" style="width: 100%;"><br><br>
+
+                <label for="email">Email:</label><br>
+                <input type="email" id="email" name="email" style="width: 100%;"><br><br>
+
+                <label for="subject">Subject:</label><br>
+                <input type="text" id="subject" name="subject" style="width: 100%;"><br><br>
+
+                <label for="message">Message:</label><br>
+                <textarea id="message" name="message" style="width: 100%; height: 150px;"></textarea><br><br>
+
+                <button type="submit" style="width: 100%; padding: 10px;">Submit</button>
+            </form>
+        </div>
+    </div>
+    <p id="error" style="color: red;"></p>
+    <div id="output"></div>
+    <div id="location" style="margin-top: 20px; text-align: center; background-color: #7f9cdb; padding: 20px; border-radius: 5px;">
+        <h2>Our Location</h2>
+        <iframe 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d31804.635650000002!2d31.615000000000002!3d0.6000000000000001!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zRzdNOCs4TU0sIEthc2FtYnlh!5e0!3m2!1sen!2s!4v1697040000000!5m2!1sen!2s" 
+            width="600" 
+            height="450" 
+            style="border:0;" 
+            allowfullscreen="" 
+            loading="lazy" 
+            referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+    </div>
+    <div id="call" style="margin-top: 20px; display: flex; justify-content: space-between; align-items: center; background-color: #addd91; padding: 20px; border-radius: 5px;">
+        <!-- Left Section -->
+        <div style="text-align: left;">
+            <h2>Contact Email</h2>
+            <p>Email us at: <a href="mailto:Tuungane.co@gmail.com">Tuungane.co@gmail.com</a></p>
+        </div>
+
+        <!-- Center Section -->
+        <div style="text-align: center;">
+            <img src="ty/log.jpg" alt="Company Logo" style="max-width: 100px; border-radius: 5px;">
+            <p>Tuungane Investment Company LTD</p>
+        </div>
+
+        <!-- Right Section -->
+        <div style="text-align: right;">
+            <h2>
+                Call
+            </h2>
+            <a href="tel:0787081104" style="text-decoration: none; color: inherit;">
+                <img src="C:\Users\ALYN\Downloads\whatsapp (1).svg" alt="WhatsApp Icon" style="width: 40px; height: 40px; vertical-align: middle; margin-top: 5px;">
+                0787081104
+            </a>
+        </div>
+    </div>
+</body>
+</html>
